@@ -4,8 +4,7 @@ import connect4.Csomagok.*;
 import java.io.*;
 
 /**
- * Main.java
- * A főprogram.
+ * Main.java A főprogram.
  */
 public class Main {
 
