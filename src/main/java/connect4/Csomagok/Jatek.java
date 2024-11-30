@@ -53,9 +53,6 @@ public class Jatek {
     int sor = OszlopSzabadSor(Tabla.BETUK.indexOf(StringKarakter));
     int oszlop = Tabla.BETUK.indexOf(StringKarakter);
     if (sor >= 0) {
-//      System.out.println("VAN szabad...");
-//      A tábla mátrix nyers kiíratása egy beépített metódus segítségével. Ez később a kimentés és visszatöltés alkalmával lehet hasznos...
-//      System.err.println(Arrays.deepToString(Tabla.tablaMatrix));
       if (Jatek.ember) {
         Tabla.setTablaMatrix(sor, oszlop, Tabla.EMBER);
         if (Jatek.NyertesEllenorzes(Tabla.EMBER)) {
@@ -96,7 +93,6 @@ public class Jatek {
       System.out.println("(Elérhető: " + ConsoleColors.CYAN + Jatek.elerhetoOszlopok + ConsoleColors.RESET + ")");
       System.out.println("Add meg az oszlop nevét, ahova a korongot rakjuk!");
       System.out.print(" - Választás: ");
-//      char oszlopKarakter = input.next().charAt(0);
 
       // Ha ember a következő, akkor beolvasás a billentyűzetről. Ha nem, véletlen választás az elérhető oszlopok közül.
       if (Jatek.ember) {

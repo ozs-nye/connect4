@@ -1,3 +1,4 @@
+
 # Connect 4 játék (JAVA - console)
 A Connetc4 (kétszemélyes) játék konzolos JAVA implementációja. Az alapszabály leírása: [Wikipedia: Connect Four.](https://hu.wikipedia.org/wiki/Connect_four)
 
@@ -33,4 +34,11 @@ Amennyiben a megadott sorok és oszlopok száma kisebb vagy nagyobb a feladatban
 [...]
 
 ![tablaOszlopVizsgalat](docs/tablaOszlopVizsgalat.png "tablaSorOszlopVizsg")
+
+#### Nyertes keresése és kihirdetése
+Az alkalmazás mindaddig fut (rajzolja újra a táblát a lerakott korongokkal), amíg 4 azonos színű nem lesz megtalálható **egymás mellett**, illetve **átlósan**. 
+
+![NyertesEllenorzes](docs/NyertesEllenorzes.png "NyertesEllenorzes")
+
+A nyertes kihirdetésekor az alkalmazás automatikusan kilép.
 
