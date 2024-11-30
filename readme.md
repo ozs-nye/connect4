@@ -9,12 +9,13 @@ A Nyíregyházi Egyetem - Programozási Technológiák (2024. őszi félév) [ku
 ## Működés
 
 ###
-A projekt mappa struktúra
+A projekt fontosabb mappái, fájljai
 
-- .idea - Idea IntelliJ
 - docs - Dokumentumok alapkönyvtára
 - javadoc - Generált JavaDoc fájlok
 - src/main/java/connect4 - A Connect4 forrásfáljai
+- gyozelmek.db - SQLite3 adatbázis fájl a győzelmek számainak letárolására.
+- pom.xml - Maven függőségi leíró
 
 
 ### Az alkalmazás indítása paraméter nélkül
