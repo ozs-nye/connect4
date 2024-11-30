@@ -11,10 +11,11 @@ A Nyíregyházi Egyetem - Programozási Technológiák (2024. őszi félév) [ku
 ###
 A projekt mappa struktúra
 
-[x] .idea - Idea IntelliJ
-[x] docs - Dokumentumok alapkönyvtára
-[x] javadoc - Generált JavaDoc fájlok
-[x] src/main/java/connect4 - A Connect4 forrásfáljai
+- .idea - Idea IntelliJ
+- docs - Dokumentumok alapkönyvtára
+- javadoc - Generált JavaDoc fájlok
+- src/main/java/connect4 - A Connect4 forrásfáljai
+
 
 ### Az alkalmazás indítása paraméter nélkül
 
