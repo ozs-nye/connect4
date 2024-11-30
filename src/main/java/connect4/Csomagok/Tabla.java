@@ -4,11 +4,11 @@ public class Tabla {
 
   private static int sorokSzama;
   private static int oszlopokSzama;
-  public static final String EMBER = " E ";   // E - ember
-  public static final String GEP = " G ";     // G - gép
-  public static final String URES = "   ";    //   - üres (nincs korong)
+  public static final String EMBER  = " E ";   // E - ember
+  public static final String GEP    = " G ";     // G - gép
+  public static final String URES   = "   ";    //   - üres (nincs korong)
   private static final String KERET = "+---"; // A tábla kirajzolásához kell.
-  public static final String BETUK = "abcdefghijklmnopqrstuvwxyz";   // Most már ez az aktuálisan használt.
+  public static final String BETUK  = "abcdefghijklmnopqrstuvwxyz";   // Most már ez az aktuálisan használt.
   public static String[][] tablaMatrix;
 
   public Tabla() {
@@ -65,9 +65,6 @@ public class Tabla {
   }
 
   public static String getTablaMatrix(int X, int Y) {
-//    String gepEmberUres = "   ";
-//    gepEmberUres = Tabla.tablaMatrix[X][Y];
-//    return gepEmberUres;
     return Tabla.tablaMatrix[X][Y];
   }
 
@@ -105,10 +102,7 @@ public class Tabla {
       System.out.println();
       System.out.print("\t");
       for (int oszlop = 0; oszlop < getOszlopokSzama(); oszlop++) {
-//        System.out.print("  " + Tabla.BETUK[oszlop] + " "); // Korábban karakter tömb volt használva.  Esetleg törölhető, ha nem lesz újra karaktertömb.
         System.out.print("  " + Tabla.BETUK.charAt(oszlop) + " "); // Most már a String egy karakterét keresi és jeleníti meg. Ezt a billentyű ellenőrzés miatt kellett bevezetni.
-//        Jatek.elerhetoOszlopok += Tabla.BETUK.charAt(oszlop); // Ez működik, de nem szép...
-//        Jatek.addElerhetoOszlop(String.valueOf(Tabla.BETUK.charAt(oszlop))); // Ez már talán az, amire szükség van.
       }
       System.out.println();
     }
@@ -128,7 +122,6 @@ public class Tabla {
       System.out.print(sor + 1 + "\t");
       for (int oszlop = 0; oszlop < getOszlopokSzama(); oszlop++) {
         System.out.print("|");
-//        System.out.print(tablaMatrix[sor][oszlop]);
 
         // Színezett karakterekkel való kirajzolás, kiemelés ettől...
         if (tablaMatrix[sor][oszlop].equals(" E ")) {

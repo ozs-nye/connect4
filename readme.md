@@ -9,19 +9,23 @@ A Nyíregyházi Egyetem - [Programozási Technológiák (2024. őszi félév) ku
 ## Működés
 
 ### Az alkalmazás indítása paraméter nélkül
+
+#### Létezik-e mentett állás?
 Az alkalmazás paraméter nélküli indításakor megvizsgálja, hogy létezik-e, elérhető-e a **Main.java** metódusában beállított mentési fájl.
 
 ![mentesFajlNev](docs/mentesFajlNev.png "mentesFajlNev")
 
+#### Mentett állás betöltése
 Ha létezik, akkor megpróbálja betölteni, majd a tábla méretét automatikusan hozzá igazítja. Ekkor a játék a kimentett állástól folytatható. *(Ez minden esetben a felhasználói lépés.)*
 
+#### Üres játéktér legenerálása
 ![tablaSorOszlop](docs/tablaSorOszlop.png "tablaSorOszlop")
 
 Ha nem található a meghatározott mentési fájl, akkor a játék a **Main.java** metódusában megadott sor és oszlop paraméterekkel legenerál egy üres játékteret, amiben az első lépés az emberi játékosé.
 
 ![tablaInicializalas](docs/TablaInicializalas.png "tablaInicializalas")
 
-
+##### Hibás sor és oszlop értékek lekezelése
 Amennyiben a megadott sorok és oszlopok száma kisebb vagy nagyobb a feladatban meghatározottaktól (4 <= Sorok száma <= Oszlopok száma <= 12), akkor az alkalmazás a legnagyobb adható értékkel helyettesíti ezeket a változókat.
 
 ![tablaSorVizsgalat](docs/tablaSorVizsgalat.png "tablaSorOszlopVizsg")
