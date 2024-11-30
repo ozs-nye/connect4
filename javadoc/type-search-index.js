@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"connect4.Csomagok","l":"ConsoleColors"},{"p":"connect4.Csomagok","l":"dbKapcsolat"},{"p":"connect4.Csomagok","l":"Fajlkezelo"},{"p":"connect4.Csomagok","l":"Jatek"},{"p":"connect4","l":"Main"},{"p":"connect4.Csomagok","l":"Tabla"}];updateSearchResults();
