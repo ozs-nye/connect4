@@ -18,6 +18,7 @@ Ezen változatban ember játszik gép ellen. *(Ez könnyen feloldható, amennyib
       * [Nyertes keresése és kihirdetése](#nyertes-keresése-és-kihirdetése)
     * [Alkalmazás indítása paraméterrel ('hs')](#alkalmazás-indítása-paraméterrel-hs)
   * [Az alkalmazás működési diagramja](#az-alkalmazás-működési-diagramja)
+  * [Felhasznált külső forrás](#felhasznált-külső-forrás)
 <!-- TOC -->
 
 ## Feladat
@@ -25,10 +26,12 @@ A Nyíregyházi Egyetem - Programozási Technológiák (2024. őszi félév) [ku
 
 ### A projekt fontosabb mappái, fájljai
 
-- docs - Dokumentumok alapkönyvtára
+- docs - Dokumentumok és kiegészítők alapkönyvtára
 - javadoc - Generált JavaDoc fájlok
 - src/main/java/connect4 - A Connect4 forrásfáljai
-- gyozelmek.db - SQLite3 adatbázis fájl a győzelmek számainak letárolására.
+- src/test/java/connect4/Csomagok - A Connect4 csomagjaihoz tartozó teszt fájljok
+- connect4.pdf - Alapvetű működési ábra az alkalmazás működésének bemutatására
+- gyozelmek.db - SQLite3 adatbázis fájl a győzelmek számainak letárolására
 - pom.xml - Maven függőségi leíró
 
 ## Működés
@@ -76,3 +79,6 @@ Kapcsolt adatbázis paraméterei:
 
 ## Az alkalmazás működési diagramja
 ![MukodesiDiagram](docs/connect4.svg)
+
+## Felhasznált külső forrás
+Konzolos szöveg színezés: [ConsoleColors](https://stackoverflow.com/questions/5762491/how-to-print-color-in-console-using-system-out-println)
