@@ -51,7 +51,7 @@ A Nyíregyházi Egyetem - Programozási Technológiák (2024. őszi félév) [ku
   - [X] Lépés fogadás a parancssoról
   - [X] Adott lépés vizsgálat (megfelelő, elfogadható, lerakható)
   - [X] Legutolsó lépés, játéktér megjelenítés
-- [X] Egységtesztek
+- [X] Egységtesztek (`JUnit5`)
 - [X] A nyert mérkőzések számának nyomon követése adatbázis kapcsolat segítségével (SQLite)
 - [X] `mvn clean install` parancs használatakor hiba nélkül fordul és indul
 - [X] `logback` implementálása, üzenetek konzolra írása
