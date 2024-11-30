@@ -16,7 +16,7 @@ A Nyíregyházi Egyetem - Programozási Technológiák (2024. őszi félév) [ku
 
 ## Működés
 
-### Az alkalmazás indítása paraméter nélkül -- 'hs'
+### Az alkalmazás indítása paraméter nélkül
 
 #### Létezik-e mentett állás?
 Az alkalmazás paraméter nélküli indításakor megvizsgálja, hogy létezik-e, elérhető-e a **Main.java** metódusában beállított mentési fájl.
@@ -49,7 +49,7 @@ Az alkalmazás mindaddig fut (rajzolja újra a táblát a lerakott korongokkal),
 
 A nyertes kihirdetésekor az alkalmazás a kapcsolt adatbázisban eggyel növeli az aktuális játékos nyeréseinek számát, majd ezt követően automatikusan kilép.
 
-### Alkalmazás indítása paraméterrel
+### Alkalmazás indítása paraméterrel ('hs')
 Az alkalmazást lehetőség van 'hs' (értsd: HighScore) paraméterrel indítani.
 Ekkor a kapcsolt adatbázisból kikéri a játékosok összesített nyerési számát, megjeleníti majd kilép.
 
