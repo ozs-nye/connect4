@@ -72,3 +72,6 @@ Ekkor a kapcsolt adatbázisból kikéri a játékosok összesített nyerési sz�
 Kapcsolt adatbázis paraméterei:
 
 ![dbBeallitasok](docs/dbBeallitasok.png "dbBeallitasok")
+
+## Az alkalmazás működéi diagramja
+![MukodesiDiagram](docs/connect4.svg)
