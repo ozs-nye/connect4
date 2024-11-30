@@ -8,6 +8,7 @@ Ezen változatban ember játszik gép ellen. *(Ez könnyen feloldható, amennyib
 * [Connect 4 játék (JAVA - console)](#connect-4-játék-java---console)
   * [Tartalom](#tartalom)
   * [Feladat](#feladat)
+    * [Feladat kivonat](#feladat-kivonat)
     * [A projekt fontosabb mappái, fájljai](#a-projekt-fontosabb-mappái-fájljai)
   * [Működés](#működés)
     * [Az alkalmazás indítása paraméter nélkül](#az-alkalmazás-indítása-paraméter-nélkül)
@@ -23,6 +24,36 @@ Ezen változatban ember játszik gép ellen. *(Ez könnyen feloldható, amennyib
 
 ## Feladat
 A Nyíregyházi Egyetem - Programozási Technológiák (2024. őszi félév) [kurzusleírásban](docs/kurzusleiras.pdf)  foglaltak megvalósítása.
+
+### Feladat kivonat
+- [X] N x M mérű tábla generálás (4 <= oszlopok száma <= sorok száma <= 12)
+- [X] Induláskor üres tábla generálás
+- [X] Ember (sárga) kezd, majd a Gép (piros) folytat
+  - [X] Mindaddig váltják egymást a korong lerakásban, míg az egyik nem győz
+  - [X] A gép az elérhető lehetőségek közül random helyre teszi le a korongot
+- [X] Az a játékos nyer, amelyik egymás mellett (vízszintesen, függőlegesen, átlóban) el tud helyezni 4 azonos színű korongot
+- [X] Publikus github repo alkalmazása az alkalmazás tárolására, megosztására (https://github.com/ozs-nye/connect4)
+- [X] .gitignore fájl alkalmazása a feltölteni nem kívánt fájlok tiltásához
+- [X] Maven projekt létrehozása, plugin-ek meghívása
+  - [X] org.apache.maven.plugins.maven-jar-plugin
+  - [X] org.apache.maven.plugins.maven-assembly-plugin
+  - [X] org.jacoco.jacoco-maven-plugin
+  - [X] org.apache.maven.plugins.maven-checkstyle-plugin
+  - Külső függőségek:
+    - [X] JUnit5
+    - [X] Mockito
+    - [X] Logback
+- [X] Az alkalmazás teljesen végigjátszható
+- [X] Induláskor ellenőrzi, hogy létezik-e mentett játékállás. Ha igen, betölti, az táblát automatikus méretezi, majd folytatja a játékot
+- [X] Az alkalmazás a lényeges interakciókat tartalmazza
+  - [X] Játék indítás
+  - [X] Játéktér ki- és újrarajzolás
+  - [X] Lépés fogadás a parancssoról
+  - [X] Adott lépés vizsgálat (megfelelő, elfogadható, lerakható)
+  - [X] Legutolsó lépés, játéktér megjelenítés
+- [X] Egységtesztek
+- [X] A nyert mérkőzések számának nyomon követése adatbázis kapcsolat segítségével (SQLite)
+- [X] mvn clean install parancs használatakor hiba nélkül fordul és indul
 
 ### A projekt fontosabb mappái, fájljai
 
