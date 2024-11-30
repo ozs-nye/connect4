@@ -1,4 +1,3 @@
-
 # Connect 4 játék (JAVA - console)
 A Connetc4 (kétszemélyes) játék konzolos JAVA implementációja. Az alapszabály leírása: [Wikipedia: Connect Four.](https://hu.wikipedia.org/wiki/Connect_four)
 

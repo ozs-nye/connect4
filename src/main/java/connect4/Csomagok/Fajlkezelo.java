@@ -2,8 +2,18 @@ package connect4.Csomagok;
 
 import java.io.*;
 
+/**
+ * Fajlkezelo.java
+ *
+ * A játékállás fájlba való kiírása és betöltése a feladata
+ */
 public class Fajlkezelo {
 
+  /**
+   * Játékállás kiírása fájlba.
+   * @param fajlNev A játékállás mentéséra használt fájl.
+   * @throws IOException Kivételkezelés.
+   */
   public static void KiirFajlba(String fajlNev) throws IOException {
     try (BufferedWriter writer = new BufferedWriter(new FileWriter(fajlNev))) {
       for (String[] sor : Tabla.tablaMatrix) {
@@ -11,9 +21,13 @@ public class Fajlkezelo {
         writer.newLine();
       }
     }
-//    System.err.println("A játékállás mentése megtörtént. (" +fajlNev+ ")");
   }
 
+  /**
+   * A beolvasott játékmentés alapján megpróbáljuk a mátrix dimenzióit meghatározni.
+   * @param fajlNev A játékállás mentésére használt fájl.
+   * @throws IOException Kivételkezelés.
+   */
   public static void setTablaMatrixMeretFajlbol(String fajlNev) throws IOException {
     try (BufferedReader reader = new BufferedReader(new FileReader(fajlNev))) {
       int sorSzam = 0;
@@ -26,21 +40,20 @@ public class Fajlkezelo {
         }
 
         if (oszlopSzam == -1) {
-//          System.err.println("Aktuális sor: " +aktualisSor);
-//          System.err.println("Aktuális sorhossz: " +aktualisSor.length() +" "+ aktualisSor.replace("|","").length());
           oszlopSzam = aktualisSor.length() - aktualisSor.replace("|", "").length() + 1; // A +1 a sor mezőinek számára emeli
-//          System.err.println("Oszlopszám: " +oszlopSzam);
         }
         sorSzam++;
       }
-//      System.err.println("Beolvasott fájl: " + fajlNev);
-//      System.err.println("Sorok száma    : " + sorSzam);
-//      System.err.println("Oszlopok száma : " + oszlopSzam);
       Tabla tabla = new Tabla(sorSzam, oszlopSzam);
     }
 
   }
 
+  /**
+   * Játékállás betöltése fájlból.
+   * @param fajlNev A játékállás mentésére használt fájl.
+   * @throws IOException Kivételkezelés.
+   */
   public static void BeolvasFajlbol(String fajlNev) throws IOException {
 
     System.err.println("Mentett játékállás betöltése... (" +fajlNev+ ")");
@@ -68,8 +81,6 @@ public class Fajlkezelo {
           if (!elemek[oszlopIndex].equals("   ")) {
             // Az aktuális oszlopnak megfelelő karakter megkeresése majd levétele az elérhetőek közül
             Jatek.removeElerhetoOszlopok(String.valueOf(Tabla.BETUK.charAt(oszlopIndex)));
-//            System.err.println(String.valueOf(oszlopIndex));
-//            System.err.println(String.valueOf(Tabla.BETUK.charAt(oszlopIndex)));
           }
           Tabla.setTablaMatrix(sorIndex, oszlopIndex, elemek[oszlopIndex]);
         }

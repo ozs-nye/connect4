@@ -2,8 +2,18 @@ package connect4.Csomagok;
 
 import java.sql.*;
 
+/**
+ * dbKapcsolat.java
+ * Adatbázis kapcsolatot megvalósítandó osztály
+ */
 public class dbKapcsolat {
 
+  /**
+   * Győzelmet követő számláló növelés az adatbázisban
+   * @param dbFajlNev Az sqlite3 adatbázis fájl neve.
+   * @param dbTabla A tárolásra használt tábla.
+   * @param Jatekos A játékos azonosítója, akihez tartozó számlálót növelni szeretnénk.
+   */
   public static void GyozelemNoveles(String dbFajlNev, String dbTabla, String Jatekos) {
     Connection sqlKapcsolat = null;
     String tablaJatekos = (Jatekos.equals(" E ")) ? "Ember" : "Gep";
@@ -32,6 +42,11 @@ public class dbKapcsolat {
     }
   }
 
+  /**
+   * Az adatbázisban tárolt győzelmek számának lekérdezése.
+   * @param dbFajlNev Az sqlite3 adatbázis fájl neve.
+   * @param dbTabla A tárolásra használt tábla.
+   */
   public static void getGyozelmek(String dbFajlNev, String dbTabla) {
     Connection sqlKapcsolat = null;
     String SQLParancs = "SELECT * FROM " + dbTabla;

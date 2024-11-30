@@ -1,5 +1,9 @@
 package connect4.Csomagok;
 
+/**
+ * Tabla.java
+ * A játéktábla megjelenítéséért felelős osztály.
+ */
 public class Tabla {
 
   private static int sorokSzama;
@@ -11,16 +15,28 @@ public class Tabla {
   public static final String BETUK  = "abcdefghijklmnopqrstuvwxyz";   // Most már ez az aktuálisan használt.
   public static String[][] tablaMatrix;
 
+  /**
+   * A Tábla előkészítése.
+   */
   public Tabla() {
     TablaInicializalas();
   }
 
+  /**
+   * A tábla dimenzióinak beállísa.
+   * @param sorokSzama A tábla sorainak száma.
+   * @param oszlopokSzama A tábla oszlopainak száma.
+   */
   public Tabla(int sorokSzama, int oszlopokSzama) {
     setSorokSzama(sorokSzama);
     setOszlopokSzama(oszlopokSzama);
     TablaInicializalas();
   }
 
+  /**
+   * Tábla inicializálás
+   * Üres tábla generálás majd kirajzoltatás.
+   */
   public void TablaInicializalas() {
     tablaMatrix = new String[getSorokSzama()][getOszlopokSzama()];
     UresTabla();
@@ -28,10 +44,20 @@ public class Tabla {
     TablaRajzolas();
   }
 
+  /**
+   * A tábla összes sorának visszaadása
+   * @return Sorok száma
+   */
   public static int getSorokSzama() {
     return sorokSzama;
   }
 
+  /**
+   * A játéktér sorainak beállítása.
+   *
+   * @param sorokSzama Beállítandó sorok sorok száma.
+   *                   Ha az aktuálisan megadott érték nem éri el vagy maghaladja a korlátot, akkor a minimumra vagy maximumra állítása.
+   */
   public static void setSorokSzama(int sorokSzama) {
     if (sorokSzama >= 12) {
       Tabla.sorokSzama = 12;
@@ -44,10 +70,20 @@ public class Tabla {
     }
   }
 
+  /**
+   * A tábla összes oszlopának száma
+   * @return Oszlopok száma
+   */
   public static int getOszlopokSzama() {
     return oszlopokSzama;
   }
 
+  /**
+   * A játéktér sorainak beállítása.
+   *
+   * @param oszlopokSzama Beállítandó oszlopok sorok száma.
+   *                      Ha az aktuálisan megadott érték nem éri el vagy maghaladja a korlátot, akkor a minimumra vagy maximumra állítása.
+   */
   public static void setOszlopokSzama(int oszlopokSzama) {
     if (oszlopokSzama >= 12) {
       Tabla.oszlopokSzama = 12;
@@ -60,18 +96,37 @@ public class Tabla {
     }
   }
 
+  /**
+   * A játéktér adott koordinátáiban levő érték beállítása.
+   * @param X A játéktér sora.
+   * @param Y A játéktér oszlopa.
+   * @param GepEmberUres A beállítandó foglalás.
+   */
   public static void setTablaMatrix(int X, int Y, String GepEmberUres) {
     Tabla.tablaMatrix[X][Y] = GepEmberUres;
   }
 
+  /**
+   * A játéktér adott koordinátáiban levő érték beállítása.
+   * @param X A játéktér sora.
+   * @param Y A játéktér oszlopa.
+   * @return A beállított foglalás értékének visszaadása.
+   */
   public static String getTablaMatrix(int X, int Y) {
     return Tabla.tablaMatrix[X][Y];
   }
 
+  /**
+   * A tábla dimenzióinak keresése.
+   * @return Sorok és oszlopok számának kiíratása.
+   */
   public String toString() {
     return "Sorok száma: " + Tabla.getSorokSzama() + "\nOszlopok száma: " + Tabla.getOszlopokSzama();
   }
 
+  /**
+   * A játéktér mezőinek üres értékkel történő feltöltése.
+   */
   public void UresTabla() {
     for (int sor = 0; sor < getSorokSzama(); sor++) {
       for (int oszlop = 0; oszlop < getOszlopokSzama(); oszlop++) {
@@ -80,6 +135,10 @@ public class Tabla {
     }
   }
 
+  /**
+   * A kirajzolandó tábla kereteinek baállítása.
+   * @param isFelso A felső vagy alsó keret szélek meghatározása.
+   */
   private static void TablaKeret(boolean isFelso) {
     if (isFelso) {
       System.out.print("\t");
@@ -109,12 +168,18 @@ public class Tabla {
     System.out.println();
   }
 
+  /**
+   * A játéktér kirajzolása korong lerakást követően.
+   */
   public static void TablaUjraRajzolas() {
     System.out.println(ConsoleColors.BLACK + "\n-----------------------------------------" + ConsoleColors.RESET);
     Tabla.TablaRajzolas();
     Jatek.BillentyuBeolvasas();
   }
 
+  /**
+   * A játéktér kirajzolása.
+   */
   public static void TablaRajzolas() {
     System.out.println();
     TablaKeret(true);

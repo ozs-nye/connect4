@@ -5,6 +5,11 @@ package connect4.Csomagok;
 // Usage:
 // System.out.println(ConsoleColors.RED + "RED COLORED" + ConsoleColors.RESET + " NORMAL");
 
+/**
+ * A konzolos karakterek színezéséhez használt külső osztály
+ *
+ * @see <a href="https://stackoverflow.com/questions/5762491/how-to-print-color-in-console-using-system-out-println">How to print color in console using System.out.println?</a>
+ */
 public class ConsoleColors {
 
   // Reset

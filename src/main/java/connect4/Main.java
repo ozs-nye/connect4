@@ -1,9 +1,12 @@
 package connect4;
 
 import connect4.Csomagok.*;
-
 import java.io.*;
 
+/**
+ * Main.java
+ * A főprogram.
+ */
 public class Main {
 
   // Ezeket csak akkor vesszük figyelembe, ha nincs mentett állás, amit be kellene tölteni
@@ -17,7 +20,11 @@ public class Main {
   public static String dbFajlNev = "gyozelmek.db";
   public static String dbTabla = "gyoztesek";
 
-
+  /**
+   * Az alkalmazás belépési pontja
+   *
+   * @param args Megvizsgáljuk, hogy az alkalmazás indításakor a 'hs' (HighScore) paraméter meg lett-e adva.
+   */
   public static void main(String[] args) {
 
     // Parancssori opciók beolvasása...
@@ -25,21 +32,19 @@ public class Main {
       if (arg.equals("hs")) {
         System.out.println("Eddigi győzelmek: \n-----------------");
         dbKapcsolat.getGyozelmek(dbFajlNev, dbTabla);
-      } else {
-        try {
-          Fajlkezelo.BeolvasFajlbol(mentesFajlNev);
-        } catch (FileNotFoundException e) {
-          System.err.println("Mentett játékállás nem található. Új játék indítása...");
-          Tabla tabla = new Tabla(tablaSorokSzama, tablaOszlopokSzama);
-          Jatek.JatekInicializalas();
-        } catch (IOException e) {
-          System.err.println("Hiba történt: " + e.getMessage());
-        } finally {
-          System.err.println("Kilépek...");
-        }
-
       }
+    }
 
+    try {
+      Fajlkezelo.BeolvasFajlbol(mentesFajlNev);
+    } catch (FileNotFoundException e) {
+      System.err.println("Mentett játékállás nem található. Új játék indítása...");
+      Tabla tabla = new Tabla(tablaSorokSzama, tablaOszlopokSzama);
+      Jatek.JatekInicializalas();
+    } catch (IOException e) {
+      System.err.println("Hiba történt: " + e.getMessage());
+    } finally {
+      System.err.println("Kilépek...");
     }
 
     // Tábla generálása

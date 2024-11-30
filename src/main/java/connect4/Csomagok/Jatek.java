@@ -6,16 +6,28 @@ import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
 
+/**
+ * Jatek.class
+ * A játék lebonyolításáért felelős osztály.
+ */
 public class Jatek {
 
   public static String elerhetoOszlopok = "";
   private static boolean ember = true;
   public static boolean vanNyertes = false;
 
+  /**
+   * A Jatek() inicializálása
+   */
   public Jatek() {
     JatekInicializalas();
   }
 
+  /**
+   * JatekInicializalas()
+   *
+   * A tábla feltöltése üres mezőkkel, majd várakozás az első beolvasásra
+   */
   public static void JatekInicializalas() {
     for (int oszlop = 0; oszlop < Tabla.getOszlopokSzama(); oszlop++) {
       for (int sor = 0; sor < Tabla.getSorokSzama(); sor++) {
@@ -25,14 +37,27 @@ public class Jatek {
     BillentyuBeolvasas();
   }
 
+  /**
+   * VIZSGÁLAT - Elérhető oszlop keresése
+   * @param oszlopIndex Keresett oszlop
+   * @return A keresett oszlop indexe
+   */
   private static char getElerhetoOszlopok(int oszlopIndex) {
     return Jatek.elerhetoOszlopok.charAt(oszlopIndex);
   }
 
+  /**
+   * Elérhető oszlopok feltöltése.
+   * @param StringKarakter Feltölteni kívánt oszlop karaktere (a, b, c, ...)
+   */
   public static void addElerhetoOszlopok(String StringKarakter) {
     elerhetoOszlopok += StringKarakter;
   }
 
+  /**
+   * Oszlop eltávolítása az elérhetőek közül
+   * @param StringKarakter Eltávolítani kívánt oszlop azonosítója (a, b, c, ...)
+   */
   public static void removeElerhetoOszlopok(String StringKarakter) {
     // Sajnos a "központi" változóval nem működik, ezért mindenképpen kell egy új String bevezetése, amit később vissza tudok írni.
     String tmpElerhetoOszlopok = Jatek.elerhetoOszlopok;
@@ -40,6 +65,11 @@ public class Jatek {
     Jatek.KorongLerakas(StringKarakter);
   }
 
+  /**
+   * VIZSGÁLAT - Az adott oszlopban van-e még rendelkezésre álló hely
+   * @param oszlopSzam Keresett oszlop
+   * @return Ha van elérhető hely az adott oszlopban, akkor az adott sor; ha nincs, akkor '-1'.
+   */
   private static int OszlopSzabadSor(int oszlopSzam) {
     for (int sor = 0; sor < Tabla.getSorokSzama(); sor++) {
       if (Tabla.tablaMatrix[sor][oszlopSzam].equals("   ")) {
@@ -49,6 +79,10 @@ public class Jatek {
     return -1;
   }
 
+  /**
+   * Egy korong lerakása
+   * @param StringKarakter A lerakni kívánt korong tulajdonosa (ember, gép)
+   */
   private static void KorongLerakas(String StringKarakter) {
     int sor = OszlopSzabadSor(Tabla.BETUK.indexOf(StringKarakter));
     int oszlop = Tabla.BETUK.indexOf(StringKarakter);
@@ -86,8 +120,12 @@ public class Jatek {
     }
   }
 
+  /**
+   * Az oszlop karakter kiválasztása a billentyűzetről
+   */
   public static void BillentyuBeolvasas() {
     char oszlopKarakter;
+    // Nyertes vizsgálata. Mindaddig végrehajtható, amíg nincs nyertes.
     while (!vanNyertes) {
       Scanner input = new Scanner(System.in);
       System.out.println("(Elérhető: " + ConsoleColors.CYAN + Jatek.elerhetoOszlopok + ConsoleColors.RESET + ")");
@@ -113,6 +151,11 @@ public class Jatek {
     }
   }
 
+  /**
+   * VIZSGÁLAT - Négy azonos színű korong keresése vízszintesen, függőlegesen és átlóban
+   * @param keresettJatekos A lerakott korong tulajdonosa (ember, gép)
+   * @return Volt-e nyertes (true, false)
+   */
   public static boolean NyertesEllenorzes(String keresettJatekos) {
     // Vízszintes ellenőrzés
     for (int sor = 0; sor < Tabla.getSorokSzama(); sor++) {
