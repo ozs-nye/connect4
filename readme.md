@@ -5,7 +5,7 @@ A Connetc4 (kétszemélyes) játék konzolos JAVA implementációja. Az alapszab
 Ezen változatban ember játszik gép ellen. *(Ez könnyen feloldható, amennyiben deaktiváljuk az automatikus korong lerakást.)*
 
 ## Feladat
-A Nyíregyházi Egyetem - [Programozási Technológiák (2024. őszi félév) kurzusleírásban](docs/kurzusleiras.pdf)  foglaltak megvalósítása.
+A Nyíregyházi Egyetem - Programozási Technológiák (2024. őszi félév) [kurzusleírásban](docs/kurzusleiras.pdf)  foglaltak megvalósítása.
 
 ## Működés
 
