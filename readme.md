@@ -16,7 +16,7 @@ A Nyíregyházi Egyetem - Programozási Technológiák (2024. őszi félév) [ku
 
 ## Működés
 
-### Az alkalmazás indítása paraméter nélkül
+### Az alkalmazás indítása paraméter nélkül -- 'hs'
 
 #### Létezik-e mentett állás?
 Az alkalmazás paraméter nélküli indításakor megvizsgálja, hogy létezik-e, elérhető-e a **Main.java** metódusában beállított mentési fájl.
