@@ -6,10 +6,7 @@ Ezen változatban ember játszik gép ellen. *(Ez könnyen feloldható, amennyib
 ## Feladat
 A Nyíregyházi Egyetem - Programozási Technológiák (2024. őszi félév) [kurzusleírásban](docs/kurzusleiras.pdf)  foglaltak megvalósítása.
 
-## Működés
-
-###
-A projekt fontosabb mappái, fájljai
+### A projekt fontosabb mappái, fájljai
 
 - docs - Dokumentumok alapkönyvtára
 - javadoc - Generált JavaDoc fájlok
@@ -17,6 +14,7 @@ A projekt fontosabb mappái, fájljai
 - gyozelmek.db - SQLite3 adatbázis fájl a győzelmek számainak letárolására.
 - pom.xml - Maven függőségi leíró
 
+## Működés
 
 ### Az alkalmazás indítása paraméter nélkül
 
