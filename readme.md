@@ -30,8 +30,9 @@ A Nyíregyházi Egyetem - Programozási Technológiák (2024. őszi félév) [ku
 - javadoc - Generált JavaDoc fájlok
 - src/main/java/connect4 - A Connect4 forrásfáljai
 - src/test/java/connect4/Csomagok - A Connect4 csomagjaihoz tartozó teszt fájljok
-- connect4.pdf - Alapvetű működési ábra az alkalmazás működésének bemutatására
+- connect4.pdf - Alapvető működési ábra az alkalmazás működésének bemutatására
 - gyozelmek.db - SQLite3 adatbázis fájl a győzelmek számainak letárolására
+- mentes.txt - Mentett játékállás. Ha törlésre kerül, akkor egy üres pálya kerül legenerálásra.
 - pom.xml - Maven függőségi leíró
 
 ## Működés
@@ -44,7 +45,7 @@ Az alkalmazás paraméter nélküli indításakor megvizsgálja, hogy létezik-e
 ![mentesFajlNev](docs/mentesFajlNev.png "mentesFajlNev")
 
 #### Mentett állás betöltése
-Ha létezik, akkor megpróbálja betölteni, majd a tábla méretét automatikusan hozzá igazítja. Ekkor a játék a kimentett állástól folytatható. *(Ez minden esetben a felhasználói lépés.)*
+Ha létezik elmentett játékállás, akkor megpróbálja betölteni, majd a tábla méretét <ins>**automatikusan**</ins> igazítja. Ekkor a játék a kimentett állástól folytatható. *(Ez minden esetben a felhasználói lépés.)*
 
 #### Üres játéktér legenerálása
 ![tablaSorOszlop](docs/tablaSorOszlop.png "tablaSorOszlop")
