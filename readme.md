@@ -19,6 +19,10 @@ Ha nem található a meghatározott mentési fájl, akkor a játék a **Main.jav
 ![tablaSorOszlop](docs/tablaSorOszlop.png "tablaSorOszlop")
 
 Amennyiben a megadott sorok és oszlopok száma kisebb vagy nagyobb a feladatban meghatározottaktól (4 <= Sorok száma <= Oszlopok száma <= 12), akkor az alkalmazás a legnagyobb adható értékkel helyettesíti ezeket a változókat.
+
 ![tablaSorVizsgalat](docs/tablaSorVizsgalat.png "tablaSorOszlopVizsg")
+
 [...]
+
 ![tablaOszlopVizsgalat](docs/tablaOszlopVizsgalat.png "tablaSorOszlopVizsg")
+
