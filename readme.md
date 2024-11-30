@@ -81,4 +81,5 @@ Kapcsolt adatbázis paraméterei:
 ![MukodesiDiagram](docs/connect4.svg)
 
 ## Felhasznált külső forrás
-Konzolos szöveg színezés: [ConsoleColors](https://stackoverflow.com/questions/5762491/how-to-print-color-in-console-using-system-out-println)
+- Konzolos szöveg színezés: [ConsoleColors](https://stackoverflow.com/questions/5762491/how-to-print-color-in-console-using-system-out-println)
+- SQLite adatbázis kezelés: [SQLite JDBC Driver](https://github.com/xerial/sqlite-jdbc)
