@@ -1,3 +1,17 @@
+<!-- TOC -->
+* [Connect 4 játék (JAVA - console)](#connect-4-játék-java---console)
+  * [Feladat](#feladat)
+    * [A projekt fontosabb mappái, fájljai](#a-projekt-fontosabb-mappái-fájljai)
+  * [Működés](#működés)
+    * [Az alkalmazás indítása paraméter nélkül](#az-alkalmazás-indítása-paraméter-nélkül)
+      * [Létezik-e mentett állás?](#létezik-e-mentett-állás)
+      * [Mentett állás betöltése](#mentett-állás-betöltése)
+      * [Üres játéktér legenerálása](#üres-játéktér-legenerálása)
+        * [Hibás sor és oszlop értékek lekezelése](#hibás-sor-és-oszlop-értékek-lekezelése)
+      * [Nyertes keresése és kihirdetése](#nyertes-keresése-és-kihirdetése)
+    * [Alkalmazás indítása paraméterrel ('hs')](#alkalmazás-indítása-paraméterrel-hs)
+<!-- TOC -->
+
 # Connect 4 játék (JAVA - console)
 A Connetc4 (kétszemélyes) játék konzolos JAVA implementációja. Az alapszabály leírása: [Wikipedia: Connect Four.](https://hu.wikipedia.org/wiki/Connect_four)
 
