@@ -14,18 +14,32 @@ public class Main {
   public static String mentesFajlNev = "mentes.txt";
 
   // Az adatbázis beállítások
-  public static String dbFajlNev= "gyozelmek.db";
-  public static String dbTabla  = "gyoztesek";
+  public static String dbFajlNev = "gyozelmek.db";
+  public static String dbTabla = "gyoztesek";
 
 
   public static void main(String[] args) {
 
     // Parancssori opciók beolvasása...
-    for (int i = 0; i < args.length; i++) {
-      if (args[i].equals("hs")) {
+    for (String arg : args) {
+      if (arg.equals("hs")) {
         System.out.println("Eddigi győzelmek: \n-----------------");
         dbKapcsolat.getGyozelmek(dbFajlNev, dbTabla);
+      } else {
+        try {
+          Fajlkezelo.BeolvasFajlbol(mentesFajlNev);
+        } catch (FileNotFoundException e) {
+          System.err.println("Mentett játékállás nem található. Új játék indítása...");
+          Tabla tabla = new Tabla(tablaSorokSzama, tablaOszlopokSzama);
+          Jatek.JatekInicializalas();
+        } catch (IOException e) {
+          System.err.println("Hiba történt: " + e.getMessage());
+        } finally {
+          System.err.println("Kilépek...");
+        }
+
       }
+
     }
 
     // Tábla generálása
@@ -49,18 +63,6 @@ public class Main {
 //    dbKapcsolat.GyozelemNoveles(dbFajlNev, dbTabla, Tabla.EMBER);
 //    dbKapcsolat.GyozelemNoveles(dbFajlNev, dbTabla, Tabla.GEP);
 
-    try {
-      Fajlkezelo.BeolvasFajlbol(mentesFajlNev);
-    } catch (FileNotFoundException e) {
-      System.err.println("Mentett játékállás nem található. Új játék indítása...");
-      Tabla tabla = new Tabla(tablaSorokSzama, tablaOszlopokSzama);
-      Jatek.JatekInicializalas();
-    } catch (IOException e) {
-//      throw new RuntimeException(e);
-      System.err.println("Hiba történt: " + e.getMessage());
-    } finally {
-      System.err.println("Kilépek...");
-    }
 
   }
 }

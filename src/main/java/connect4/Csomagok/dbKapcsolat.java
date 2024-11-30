@@ -12,12 +12,10 @@ public class dbKapcsolat {
     try {
       String url = "jdbc:sqlite:" + dbFajlNev;
       sqlKapcsolat = DriverManager.getConnection(url);
-//      sqlKapcsolat.setAutoCommit(false);
       System.err.println("SQL kapcsolat kiépítve.");
 
       Statement sqlKifejezes = sqlKapcsolat.createStatement();
       sqlKifejezes.executeUpdate(SQLParancs);
-//      sqlKapcsolat.commit();
       sqlKifejezes.close();
 
     } catch (SQLException e) {

@@ -40,5 +40,12 @@ Az alkalmazás mindaddig fut (rajzolja újra a táblát a lerakott korongokkal),
 
 ![NyertesEllenorzes](docs/NyertesEllenorzes.png "NyertesEllenorzes")
 
-A nyertes kihirdetésekor az alkalmazás automatikusan kilép.
+A nyertes kihirdetésekor az alkalmazás a kapcsolt adatbázisban eggyel növeli az aktuális játékos nyeréseinek számát, majd ezt követően automatikusan kilép.
 
+### Alkalmazás indítása paraméterrel
+Az alkalmazást lehetőség van 'hs' (értsd: HighScore) paraméterrel indítani.
+Ekkor a kapcsolt adatbázisból kikéri a játékosok összesített nyerési számát, megjeleníti majd kilép.
+
+Kapcsolt adatbázis paraméterei:
+
+![dbBeallitasok](docs/dbBeallitasok.png "dbBeallitasok")
