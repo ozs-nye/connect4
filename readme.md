@@ -33,7 +33,7 @@ A Nyíregyházi Egyetem - Programozási Technológiák (2024. őszi félév) [ku
   - [X] A gép az elérhető lehetőségek közül random helyre teszi le a korongot
 - [X] Az a játékos nyer, amelyik egymás mellett (vízszintesen, függőlegesen, átlóban) el tud helyezni 4 azonos színű korongot
 - [X] Publikus github repo alkalmazása az alkalmazás tárolására, megosztására (https://github.com/ozs-nye/connect4)
-- [X] .gitignore fájl alkalmazása a feltölteni nem kívánt fájlok tiltásához
+- [X] `.gitignore` fájl alkalmazása a feltölteni nem kívánt fájlok tiltásához
 - [X] Maven projekt létrehozása, plugin-ek meghívása
   - [X] org.apache.maven.plugins.maven-jar-plugin
   - [X] org.apache.maven.plugins.maven-assembly-plugin
@@ -53,8 +53,8 @@ A Nyíregyházi Egyetem - Programozási Technológiák (2024. őszi félév) [ku
   - [X] Legutolsó lépés, játéktér megjelenítés
 - [X] Egységtesztek
 - [X] A nyert mérkőzések számának nyomon követése adatbázis kapcsolat segítségével (SQLite)
-- [X] ```mvn clean install``` parancs használatakor hiba nélkül fordul és indul
-- [X] ```logback``` implementálása, üzenetek konzolra írása
+- [X] `mvn clean install` parancs használatakor hiba nélkül fordul és indul
+- [X] `logback` implementálása, üzenetek konzolra írása
 
 ### A projekt fontosabb mappái, fájljai
 
