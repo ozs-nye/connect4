@@ -16,7 +16,6 @@ public class Main {
   // Az adatbázis beállítások
   public static String dbFajlNev= "gyozelmek.db";
   public static String dbTabla  = "gyoztesek";
-//  public static String dbElotag   = "";
 
 
   public static void main(String[] args) {

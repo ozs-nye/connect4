@@ -8,19 +8,14 @@ public class Tabla {
   public static final String GEP = " G ";     // G - gép
   public static final String URES = "   ";    //   - üres (nincs korong)
   private static final String KERET = "+---"; // A tábla kirajzolásához kell.
-  //  public static final char[] BETUK = "abcdefghijklmnopqrstuvwxyz".toCharArray(); // Korábban ebből jelenítette meg az oszlopok azonosítóit
   public static final String BETUK = "abcdefghijklmnopqrstuvwxyz";   // Most már ez az aktuálisan használt.
   public static String[][] tablaMatrix;
 
   public Tabla() {
-//    Tabla.sorokSzama = sorokSzama; // Törölhető
-//    Tabla.oszlopokSzama = oszlopokSzama; // Törölhető
     TablaInicializalas();
   }
 
   public Tabla(int sorokSzama, int oszlopokSzama) {
-//    Tabla.sorokSzama = sorokSzama; // Törölhető
-//    Tabla.oszlopokSzama = oszlopokSzama; // Törölhető
     setSorokSzama(sorokSzama);
     setOszlopokSzama(oszlopokSzama);
     TablaInicializalas();
