@@ -1,5 +1,12 @@
+# Connect 4 játék (JAVA - console)
+A Connetc4 (kétszemélyes) játék konzolos JAVA implementációja. Az alapszabály leírása: [Wikipedia: Connect Four.](https://hu.wikipedia.org/wiki/Connect_four)
+
+Ezen változatban ember játszik gép ellen. *(Ez könnyen feloldható, amennyiben deaktiváljuk az automatikus korong lerakást.)*
+
+## Tartalom
 <!-- TOC -->
 * [Connect 4 játék (JAVA - console)](#connect-4-játék-java---console)
+  * [Tartalom](#tartalom)
   * [Feladat](#feladat)
     * [A projekt fontosabb mappái, fájljai](#a-projekt-fontosabb-mappái-fájljai)
   * [Működés](#működés)
@@ -11,11 +18,6 @@
       * [Nyertes keresése és kihirdetése](#nyertes-keresése-és-kihirdetése)
     * [Alkalmazás indítása paraméterrel ('hs')](#alkalmazás-indítása-paraméterrel-hs)
 <!-- TOC -->
-
-# Connect 4 játék (JAVA - console)
-A Connetc4 (kétszemélyes) játék konzolos JAVA implementációja. Az alapszabály leírása: [Wikipedia: Connect Four.](https://hu.wikipedia.org/wiki/Connect_four)
-
-Ezen változatban ember játszik gép ellen. *(Ez könnyen feloldható, amennyiben deaktiváljuk az automatikus korong lerakást.)*
 
 ## Feladat
 A Nyíregyházi Egyetem - Programozási Technológiák (2024. őszi félév) [kurzusleírásban](docs/kurzusleiras.pdf)  foglaltak megvalósítása.
