@@ -53,7 +53,8 @@ A Nyíregyházi Egyetem - Programozási Technológiák (2024. őszi félév) [ku
   - [X] Legutolsó lépés, játéktér megjelenítés
 - [X] Egységtesztek
 - [X] A nyert mérkőzések számának nyomon követése adatbázis kapcsolat segítségével (SQLite)
-- [X] mvn clean install parancs használatakor hiba nélkül fordul és indul
+- [X] ```mvn clean install``` parancs használatakor hiba nélkül fordul és indul
+- [X] ```logback``` implementálása, üzenetek konzolra írása
 
 ### A projekt fontosabb mappái, fájljai
 
@@ -64,6 +65,7 @@ A Nyíregyházi Egyetem - Programozási Technológiák (2024. őszi félév) [ku
 - connect4.pdf - Alapvető működési ábra az alkalmazás működésének bemutatására
 - gyozelmek.db - SQLite3 adatbázis fájl a győzelmek számainak letárolására
 - mentes.txt - Mentett játékállás. Ha törlésre kerül, akkor egy üres pálya kerül legenerálásra.
+- logback.xml - Alapvető logback beállítás
 - pom.xml - Maven függőségi leíró
 
 ## Működés
