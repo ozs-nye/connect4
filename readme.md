@@ -105,6 +105,7 @@ A nyertes kihirdetésekor az alkalmazás a kapcsolt adatbázisban eggyel növeli
 
 ### Alkalmazás indítása paraméterrel ('hs')
 ![dbHighScore](docs/dbGyozelmek.png "dbGyozelmek")
+
 Az alkalmazást lehetőség van `hs` (értsd: HighScore) paraméterrel indítani.
 Ekkor a kapcsolt adatbázisból kikéri a játékosok összesített nyerési számát, megjeleníti majd kilép.
 
