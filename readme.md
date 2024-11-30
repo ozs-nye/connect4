@@ -17,6 +17,7 @@ Ezen változatban ember játszik gép ellen. *(Ez könnyen feloldható, amennyib
         * [Hibás sor és oszlop értékek lekezelése](#hibás-sor-és-oszlop-értékek-lekezelése)
       * [Nyertes keresése és kihirdetése](#nyertes-keresése-és-kihirdetése)
     * [Alkalmazás indítása paraméterrel ('hs')](#alkalmazás-indítása-paraméterrel-hs)
+  * [Az alkalmazás működési diagramja](#az-alkalmazás-működési-diagramja)
 <!-- TOC -->
 
 ## Feladat
@@ -73,5 +74,5 @@ Kapcsolt adatbázis paraméterei:
 
 ![dbBeallitasok](docs/dbBeallitasok.png "dbBeallitasok")
 
-## Az alkalmazás működéi diagramja
+## Az alkalmazás működési diagramja
 ![MukodesiDiagram](docs/connect4.svg)
