@@ -26,13 +26,13 @@ Ezen változatban ember játszik gép ellen. *(Ez könnyen feloldható, amennyib
 A Nyíregyházi Egyetem - Programozási Technológiák (2024. őszi félév) [kurzusleírásban](docs/kurzusleiras.pdf)  foglaltak megvalósítása.
 
 ### Feladat kivonat
+- [X] Publikus github repo alkalmazása az alkalmazás tárolására, megosztására (https://github.com/ozs-nye/connect4)
 - [X] N x M mérű tábla generálás (4 <= oszlopok száma <= sorok száma <= 12)
-- [X] Induláskor üres tábla generálás
+- [X] Induláskor üres tábla generálás (ha nincs mentett játékállás, amit be lehet tölteni)
 - [X] Ember (sárga) kezdi, majd a Gép (piros) folytatja
   - [X] Mindaddig váltják egymást a korong lerakásban, míg az egyik nem győz
-  - [X] A gép az elérhető lehetőségek közül random helyre teszi le a korongot
+  - [X] A gép az elérhető lehetőségek közül random oszlopba teszi le a korongot
 - [X] Az a játékos nyer, amelyik egymás mellett (vízszintesen, függőlegesen, átlóban) el tud helyezni 4 azonos színű korongot
-- [X] Publikus github repo alkalmazása az alkalmazás tárolására, megosztására (https://github.com/ozs-nye/connect4)
 - [X] `.gitignore` fájl alkalmazása a feltölteni nem kívánt fájlok tiltásához
 - [X] Maven projekt létrehozása, plugin-ek meghívása
   - [X] org.apache.maven.plugins.maven-jar-plugin
@@ -44,7 +44,7 @@ A Nyíregyházi Egyetem - Programozási Technológiák (2024. őszi félév) [ku
     - [X] Mockito
     - [X] Logback
 - [X] Az alkalmazás teljesen végigjátszható
-- [X] Induláskor ellenőrzi, hogy létezik-e mentett játékállás. Ha igen, betölti, a **játékteret automatikus méretezi**, majd folytatja a játékot
+- [X] Induláskor ellenőrzi, hogy létezik-e mentett játékállás. Ha igen, akkor betölti, a **játékteret automatikusan méretezi**, majd folytatja a játékot
 - [X] Az alkalmazás a lényeges interakciókat tartalmazza
   - [X] Játék indítás (paraméter átadással)
   - [X] Játéktér ki- és újrarajzolás
