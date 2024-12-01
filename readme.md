@@ -28,7 +28,7 @@ A Nyíregyházi Egyetem - Programozási Technológiák (2024. őszi félév) [ku
 ### Feladat kivonat
 - [X] N x M mérű tábla generálás (4 <= oszlopok száma <= sorok száma <= 12)
 - [X] Induláskor üres tábla generálás
-- [X] Ember (sárga) kezd, majd a Gép (piros) folytat
+- [X] Ember (sárga) kezdi, majd a Gép (piros) folytatja
   - [X] Mindaddig váltják egymást a korong lerakásban, míg az egyik nem győz
   - [X] A gép az elérhető lehetőségek közül random helyre teszi le a korongot
 - [X] Az a játékos nyer, amelyik egymás mellett (vízszintesen, függőlegesen, átlóban) el tud helyezni 4 azonos színű korongot
@@ -44,17 +44,20 @@ A Nyíregyházi Egyetem - Programozási Technológiák (2024. őszi félév) [ku
     - [X] Mockito
     - [X] Logback
 - [X] Az alkalmazás teljesen végigjátszható
-- [X] Induláskor ellenőrzi, hogy létezik-e mentett játékállás. Ha igen, betölti, az táblát automatikus méretezi, majd folytatja a játékot
+- [X] Induláskor ellenőrzi, hogy létezik-e mentett játékállás. Ha igen, betölti, a **játékteret automatikus méretezi**, majd folytatja a játékot
 - [X] Az alkalmazás a lényeges interakciókat tartalmazza
-  - [X] Játék indítás
+  - [X] Játék indítás (paraméter átadással)
   - [X] Játéktér ki- és újrarajzolás
-  - [X] Lépés fogadás a parancssoról
+  - [X] Lépés fogadás a parancssorról
   - [X] Adott lépés vizsgálat (megfelelő, elfogadható, lerakható)
   - [X] Legutolsó lépés, játéktér megjelenítés
+- [X] Nyertes vizsgálat, kihirdetés
 - [X] Egységtesztek (`JUnit5`)
-- [X] A nyert mérkőzések számának nyomon követése adatbázis kapcsolat segítségével (SQLite)
+- [X] A nyert mérkőzések számának nyomon követése adatbázis kapcsolat segítségével (`SQLite`)
+  - [X] Nyerteshez tartozó adatbázis érték nyövelése a nyerések számlálásához
+  - [X] `hs` parancssori paraméterrel való indításkor a nyert eredmények megjelenítése
 - [X] `mvn clean install` parancs használatakor hiba nélkül fordul és indul
-- [X] `logback` implementálása, üzenetek konzolra írása
+- [X] `logback` implementálása, üzenetek konzolra írása (`INFO`, `ERROR`)
 
 ### A projekt fontosabb mappái, fájljai
 
