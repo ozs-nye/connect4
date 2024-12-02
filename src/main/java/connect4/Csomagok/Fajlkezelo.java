@@ -6,6 +6,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
+import java.nio.file.Path;
 
 /**
  * Fajlkezelo.java
@@ -101,6 +104,17 @@ public class Fajlkezelo {
     // A játék folytatása a kimentett állapottól
     System.out.println(ConsoleColors.GREEN_BOLD + "Mentett játékállás betöltve. Folytassuk!" + ConsoleColors.RESET);
     Tabla.TablaUjraRajzolas();
+  }
+
+  public static void MentesTorles(String fajlNev) throws IOException {
+    try {
+      Files.deleteIfExists(Path.of(fajlNev));
+    } catch (NoSuchFileException e) {
+      logger.error("A fájl nem létezik. (" +fajlNev+ ") " +e);
+    } catch (IOException e) {
+      logger.error("Hiba történt. (" +e+ ")");
+    }
+    logger.info("Mentett játékállás törölve. (" +fajlNev+ ")");
   }
 
 }

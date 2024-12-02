@@ -25,7 +25,7 @@ public class Jatek {
 
   /**
    * JatekInicializalas()
-   *
+   * <p>
    * A tábla feltöltése üres mezőkkel, majd várakozás az első beolvasásra
    */
   public static void JatekInicializalas() {
@@ -39,6 +39,7 @@ public class Jatek {
 
   /**
    * VIZSGÁLAT - Elérhető oszlop keresése
+   *
    * @param oszlopIndex Keresett oszlop
    * @return A keresett oszlop indexe
    */
@@ -48,6 +49,7 @@ public class Jatek {
 
   /**
    * Elérhető oszlopok feltöltése.
+   *
    * @param StringKarakter Feltölteni kívánt oszlop karaktere (a, b, c, ...)
    */
   public static void addElerhetoOszlopok(String StringKarakter) {
@@ -56,17 +58,23 @@ public class Jatek {
 
   /**
    * Oszlop eltávolítása az elérhetőek közül
+   *
    * @param StringKarakter Eltávolítani kívánt oszlop azonosítója (a, b, c, ...)
    */
   public static void removeElerhetoOszlopok(String StringKarakter) {
     // Sajnos a "központi" változóval nem működik, ezért mindenképpen kell egy új String bevezetése, amit később vissza tudok írni.
     String tmpElerhetoOszlopok = Jatek.elerhetoOszlopok;
     Jatek.elerhetoOszlopok = tmpElerhetoOszlopok.replaceFirst(StringKarakter, "");
-    Jatek.KorongLerakas(StringKarakter);
+    try {
+      Jatek.KorongLerakas(StringKarakter);
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
   }
 
   /**
    * VIZSGÁLAT - Az adott oszlopban van-e még rendelkezésre álló hely
+   *
    * @param oszlopSzam Keresett oszlop
    * @return Ha van elérhető hely az adott oszlopban, akkor az adott sor; ha nincs, akkor '-1'.
    */
@@ -81,9 +89,10 @@ public class Jatek {
 
   /**
    * Egy korong lerakása
+   *
    * @param StringKarakter A lerakni kívánt korong tulajdonosa (ember, gép)
    */
-  private static void KorongLerakas(String StringKarakter) {
+  private static void KorongLerakas(String StringKarakter) throws IOException {
     int oszlop = Tabla.BETUK.indexOf(StringKarakter);
     int sor = OszlopSzabadSor(oszlop);
 
@@ -93,6 +102,7 @@ public class Jatek {
         if (Jatek.NyertesEllenorzes(Tabla.EMBER)) {
           System.out.println(ConsoleColors.YELLOW + "A játéknak vége. Nyertél, ember! Gratulálok! :)" + ConsoleColors.RESET);
           Jatek.vanNyertes = true;
+          Fajlkezelo.MentesTorles(Main.mentesFajlNev);
           return;
         }
         Jatek.ember = false;
@@ -101,6 +111,7 @@ public class Jatek {
         if (Jatek.NyertesEllenorzes(Tabla.GEP)) {
           System.out.println(ConsoleColors.RED + "A játéknak vége. Vesztettél, ember! A gép nyert :(" + ConsoleColors.RESET);
           Jatek.vanNyertes = true;
+          Fajlkezelo.MentesTorles(Main.mentesFajlNev);
           return;
         }
         Jatek.ember = true;
@@ -115,14 +126,15 @@ public class Jatek {
       Jatek.vanNyertes = true;
     }
 
-    // A tábla aktuális tartalmának fájlba írása
-    try {
-      Fajlkezelo.KiirFajlba(Main.mentesFajlNev);
-    } catch (IOException e) {
-      throw new RuntimeException("Hiba történt: " + e);
+    // A tábla aktuális tartalmának fájlba írása, ha nincs nyertes
+    if (!Jatek.vanNyertes) {
+      try {
+        Fajlkezelo.KiirFajlba(Main.mentesFajlNev);
+      } catch (IOException e) {
+        throw new RuntimeException("Hiba történt: " +e);
+      }
     }
   }
-
 
 
   /**
@@ -158,6 +170,7 @@ public class Jatek {
 
   /**
    * Ellenőrzi, hogy a játéktér betelt-e (döntetlen eset).
+   *
    * @return true, ha a játéktér teljesen tele van, különben false.
    */
   public static boolean dontetlenEllenorzes() {
@@ -172,10 +185,9 @@ public class Jatek {
   }
 
 
-
-
   /**
    * VIZSGÁLAT - Négy azonos színű korong keresése vízszintesen, függőlegesen és átlóban
+   *
    * @param keresettJatekos A lerakott korong tulajdonosa (ember, gép)
    * @return Volt-e nyertes (true, false)
    */
