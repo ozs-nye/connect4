@@ -42,8 +42,8 @@ public class Fajlkezelo {
    */
   public static void setTablaMatrixMeretFajlbol(String fajlNev) throws IOException {
     try (BufferedReader reader = new BufferedReader(new FileReader(fajlNev))) {
-      int sorSzam = 0;
-      int oszlopSzam = -1;
+      int tablaSorokSzama = 0;
+      int tablaOszlopokSzama = -1;
       String aktualisSor;
 
       while ((aktualisSor = reader.readLine()) != null) {
@@ -51,12 +51,12 @@ public class Fajlkezelo {
           continue; // Üres sorok kihagyása
         }
 
-        if (oszlopSzam == -1) {
-          oszlopSzam = aktualisSor.length() - aktualisSor.replace("|", "").length() + 1; // A +1 a sor mezőinek számára emeli
+        if (tablaOszlopokSzama == -1) {
+          tablaOszlopokSzama = aktualisSor.length() - aktualisSor.replace("|", "").length() + 1; // A +1 a sor mezőinek számára emeli
         }
-        sorSzam++;
+        tablaSorokSzama++;
       }
-      Tabla tabla = new Tabla(sorSzam, oszlopSzam);
+      Tabla tabla = new Tabla(tablaSorokSzama, tablaOszlopokSzama);
     }
 
   }
@@ -106,6 +106,10 @@ public class Fajlkezelo {
     Tabla.TablaUjraRajzolas();
   }
 
+  /**
+   * Mentett játékállás törlése.
+   * @param fajlNev A törlendő játékállás fájlja.
+   */
   public static void MentesTorles(String fajlNev) {
     try {
       Files.deleteIfExists(Path.of(fajlNev));
