@@ -100,7 +100,7 @@ public class Jatek {
       if (Jatek.ember) {
         Tabla.setTablaMatrix(sor, oszlop, Tabla.EMBER);
         if (Jatek.NyertesEllenorzes(Tabla.EMBER)) {
-          System.out.println(ConsoleColors.YELLOW + "A játéknak vége. Nyertél, ember! Gratulálok! :)" + ConsoleColors.RESET);
+          System.out.println(ConsoleColors.YELLOW + "\n\nA játéknak vége. Nyertél, ember! Gratulálok! :)\n" + ConsoleColors.RESET);
           Jatek.vanNyertes = true;
           Fajlkezelo.MentesTorles(Main.mentesFajlNev);
           return;
@@ -109,7 +109,7 @@ public class Jatek {
       } else {
         Tabla.setTablaMatrix(sor, oszlop, Tabla.GEP);
         if (Jatek.NyertesEllenorzes(Tabla.GEP)) {
-          System.out.println(ConsoleColors.RED + "A játéknak vége. Vesztettél, ember! A gép nyert :(" + ConsoleColors.RESET);
+          System.out.println(ConsoleColors.RED + "\n\nA játéknak vége. Vesztettél, ember! A gép nyert :(\n" + ConsoleColors.RESET);
           Jatek.vanNyertes = true;
           Fajlkezelo.MentesTorles(Main.mentesFajlNev);
           return;
@@ -122,7 +122,8 @@ public class Jatek {
 
     // Ellenőrizzük, hogy a játék döntetlen-e a korong elhelyezése után
     if (dontetlenEllenorzes()) {
-      System.out.println(ConsoleColors.CYAN + "A játéknak vége. Döntetlen!" + ConsoleColors.RESET);
+      System.out.println(ConsoleColors.CYAN + "\n\nA játéknak vége. Döntetlen!\n" + ConsoleColors.RESET);
+      Fajlkezelo.MentesTorles(Main.mentesFajlNev);
       Jatek.vanNyertes = true;
     }
 
