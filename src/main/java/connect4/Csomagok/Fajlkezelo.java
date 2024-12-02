@@ -106,7 +106,7 @@ public class Fajlkezelo {
     Tabla.TablaUjraRajzolas();
   }
 
-  public static void MentesTorles(String fajlNev) throws IOException {
+  public static void MentesTorles(String fajlNev) {
     try {
       Files.deleteIfExists(Path.of(fajlNev));
     } catch (NoSuchFileException e) {
