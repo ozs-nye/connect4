@@ -52,6 +52,9 @@ A Nyíregyházi Egyetem - Programozási Technológiák (2024. őszi félév) [ku
   - [X] Adott lépés vizsgálat (megfelelő, elfogadható, lerakható)
   - [X] Legutolsó lépés, játéktér megjelenítés
 - [X] Nyertes vizsgálat, kihirdetés
+- [X] Döntetlen (telített játéktér) vizsgálat
+- [X] Játékállás automatikus mentése minden korong lerakás után
+- [X] Játékállás automatikus törlése nyerés vagy döntetlen után
 - [X] Egységtesztek (`JUnit5`)
 - [X] A nyert mérkőzések számának nyomon követése adatbázis kapcsolat segítségével (`SQLite`)
   - [X] Nyerteshez tartozó adatbázis érték nyövelése a nyerések számlálásához
