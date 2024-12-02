@@ -84,41 +84,46 @@ public class Jatek {
    * @param StringKarakter A lerakni kívánt korong tulajdonosa (ember, gép)
    */
   private static void KorongLerakas(String StringKarakter) {
-    int sor = OszlopSzabadSor(Tabla.BETUK.indexOf(StringKarakter));
     int oszlop = Tabla.BETUK.indexOf(StringKarakter);
+    int sor = OszlopSzabadSor(oszlop);
+
     if (sor >= 0) {
       if (Jatek.ember) {
         Tabla.setTablaMatrix(sor, oszlop, Tabla.EMBER);
         if (Jatek.NyertesEllenorzes(Tabla.EMBER)) {
-          System.out.println();
           System.out.println(ConsoleColors.YELLOW + "A játéknak vége. Nyertél, ember! Gratulálok! :)" + ConsoleColors.RESET);
           Jatek.vanNyertes = true;
+          return;
         }
         Jatek.ember = false;
-        try {
-          Fajlkezelo.KiirFajlba(Main.mentesFajlNev);
-        } catch (IOException e) {
-          throw new RuntimeException("Hiba történt: " +e);
-        }
       } else {
         Tabla.setTablaMatrix(sor, oszlop, Tabla.GEP);
         if (Jatek.NyertesEllenorzes(Tabla.GEP)) {
-          System.out.println();
           System.out.println(ConsoleColors.RED + "A játéknak vége. Vesztettél, ember! A gép nyert :(" + ConsoleColors.RESET);
           Jatek.vanNyertes = true;
+          return;
         }
         Jatek.ember = true;
-        // A tábla aktuális tartalmának fájlba írása...
-        try {
-          Fajlkezelo.KiirFajlba(Main.mentesFajlNev);
-        } catch (IOException e) {
-          throw new RuntimeException("Hiba történt: " +e);
-        }
       }
     } else {
-      System.err.println("Valami nem klappol! :( (Sor: " + sor + ", oszlop: " + oszlop + ")");
+      System.err.println("Az oszlop megtelt! Próbálj másikat választani.");
+    }
+
+    // Ellenőrizzük, hogy a játék döntetlen-e a korong elhelyezése után
+    if (dontetlenEllenorzes()) {
+      System.out.println(ConsoleColors.CYAN + "A játéknak vége. Döntetlen!" + ConsoleColors.RESET);
+      Jatek.vanNyertes = true;
+    }
+
+    // A tábla aktuális tartalmának fájlba írása
+    try {
+      Fajlkezelo.KiirFajlba(Main.mentesFajlNev);
+    } catch (IOException e) {
+      throw new RuntimeException("Hiba történt: " + e);
     }
   }
+
+
 
   /**
    * Az oszlop karakter kiválasztása a billentyűzetről
@@ -150,6 +155,24 @@ public class Jatek {
 
     }
   }
+
+  /**
+   * Ellenőrzi, hogy a játéktér betelt-e (döntetlen eset).
+   * @return true, ha a játéktér teljesen tele van, különben false.
+   */
+  public static boolean dontetlenEllenorzes() {
+    for (int sor = 0; sor < Tabla.getSorokSzama(); sor++) {
+      for (int oszlop = 0; oszlop < Tabla.getOszlopokSzama(); oszlop++) {
+        if (Tabla.getTablaMatrix(sor, oszlop).equals(Tabla.URES)) {
+          return false; // Találtunk üres helyet, tehát nem döntetlen
+        }
+      }
+    }
+    return true; // Minden mező foglalt, döntetlen
+  }
+
+
+
 
   /**
    * VIZSGÁLAT - Négy azonos színű korong keresése vízszintesen, függőlegesen és átlóban
