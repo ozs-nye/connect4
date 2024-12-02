@@ -35,7 +35,7 @@ public class Main {
     // Parancssori opciók beolvasása...
     for (String arg : args) {
       if (arg.equals("hs")) {
-        System.out.println("Eddigi győzelmek: \n-----------------");
+        System.out.println(ConsoleColors.PURPLE +"\nEddigi győzelmek: \n-----------------");
         dbKapcsolat.getGyozelmek(dbFajlNev, dbTabla);
       }
     }
