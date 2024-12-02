@@ -1,5 +1,8 @@
 package connect4.Csomagok;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.sql.*;
 
 /**
@@ -7,6 +10,7 @@ import java.sql.*;
  * Adatbázis kapcsolatot megvalósítandó osztály
  */
 public class dbKapcsolat {
+  private static final Logger logger = LoggerFactory.getLogger(dbKapcsolat.class);
 
   /**
    * Győzelmet követő számláló növelés az adatbázisban
@@ -22,7 +26,7 @@ public class dbKapcsolat {
     try {
       String url = "jdbc:sqlite:" + dbFajlNev;
       sqlKapcsolat = DriverManager.getConnection(url);
-      System.err.println("SQL kapcsolat kiépítve.");
+//      System.err.println("SQL kapcsolat kiépítve.");
 
       Statement sqlKifejezes = sqlKapcsolat.createStatement();
       sqlKifejezes.executeUpdate(SQLParancs);
@@ -34,10 +38,12 @@ public class dbKapcsolat {
       try {
         if (sqlKapcsolat != null) {
           sqlKapcsolat.close();
-          System.err.println("SQL kapcsolat lezárva.");
+//          System.err.println("SQL kapcsolat lezárva.");
+          logger.info("SQL kapcsolat lezárva.");
         }
       } catch (SQLException e) {
-        System.err.println("Nem tudtam lezárni a kapcsolatot. (dbFajlNev: " + dbFajlNev + ", hibaüzenet: " + e.getMessage() + ")");
+//        System.err.println("Nem tudtam lezárni a kapcsolatot. (dbFajlNev: " + dbFajlNev + ", hibaüzenet: " + e.getMessage() + ")");
+        logger.error("Nem tudtam lezárni a kapcsolatot. (dbFajlNev: " + dbFajlNev + ", hibaüzenet: " + e.getMessage() + ")");
       }
     }
   }
@@ -65,10 +71,12 @@ public class dbKapcsolat {
           }
         }
       }
+      System.out.println(ConsoleColors.RESET);
       sqlKifejezes.close();
 
     } catch (SQLException e) {
-      System.err.println("Nem tudtam kiépíteni a kapcsolatot. (dbFajlNev: " + dbFajlNev + ", hibaüzenet: " + e.getMessage() + ")");
+//      System.err.println("Nem tudtam kiépíteni a kapcsolatot. (dbFajlNev: " + dbFajlNev + ", hibaüzenet: " + e.getMessage() + ")");
+      logger.error("Nem tudtam kiépíteni a kapcsolatot. (dbFajlNev: " + dbFajlNev + ", hibaüzenet: " + e.getMessage() + ")");
     }
   }
 

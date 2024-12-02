@@ -1,16 +1,24 @@
 package connect4.Csomagok;
 
+//import connect4.Main;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.*;
 
 /**
  * Fajlkezelo.java
- *
+ * <p>
  * A játékállás fájlba való kiírása és betöltése a feladata
  */
 public class Fajlkezelo {
 
+  private static final Logger logger = LoggerFactory.getLogger(Fajlkezelo.class);
+
   /**
    * Játékállás kiírása fájlba.
+   *
    * @param fajlNev A játékállás mentéséra használt fájl.
    * @throws IOException Kivételkezelés.
    */
@@ -25,6 +33,7 @@ public class Fajlkezelo {
 
   /**
    * A beolvasott játékmentés alapján megpróbáljuk a mátrix dimenzióit meghatározni.
+   *
    * @param fajlNev A játékállás mentésére használt fájl.
    * @throws IOException Kivételkezelés.
    */
@@ -51,12 +60,14 @@ public class Fajlkezelo {
 
   /**
    * Játékállás betöltése fájlból.
+   *
    * @param fajlNev A játékállás mentésére használt fájl.
    * @throws IOException Kivételkezelés.
    */
   public static void BeolvasFajlbol(String fajlNev) throws IOException {
 
-    System.err.println("Mentett játékállás betöltése... (" +fajlNev+ ")");
+//    System.err.println("Mentett játékállás betöltése... (" +fajlNev+ ")");
+    logger.info("Mentett játékállás betöltése... (" + fajlNev + ")");
 
     // A fájlba mentett tábla mérete alapján történő dinamikus beállítás
     setTablaMatrixMeretFajlbol(fajlNev);
@@ -88,7 +99,7 @@ public class Fajlkezelo {
       }
     }
     // A játék folytatása a kimentett állapottól
-    System.out.println(ConsoleColors.GREEN_BOLD +"Mentett játékállás betöltve. Folytassuk!"+ ConsoleColors.RESET);
+    System.out.println(ConsoleColors.GREEN_BOLD + "Mentett játékállás betöltve. Folytassuk!" + ConsoleColors.RESET);
     Tabla.TablaUjraRajzolas();
   }
 
