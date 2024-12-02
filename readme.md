@@ -39,10 +39,10 @@ A Nyíregyházi Egyetem - Programozási Technológiák (2024. őszi félév) [ku
   - [X] org.apache.maven.plugins.maven-assembly-plugin
   - [X] org.jacoco.jacoco-maven-plugin
   - [X] org.apache.maven.plugins.maven-checkstyle-plugin
-  - Külső függőségek:
-    - [X] JUnit5
-    - [X] Mockito
-    - [X] Logback
+  - [X] Külső függőségek integrálása:
+    - JUnit5
+    - Mockito
+    - Logback
 - [X] Az alkalmazás teljesen végigjátszható
 - [X] Induláskor ellenőrzi, hogy létezik-e mentett játékállás. Ha igen, akkor betölti, a **játékteret automatikusan méretezi**, majd folytatja a játékot
 - [X] Az alkalmazás a lényeges interakciókat tartalmazza
